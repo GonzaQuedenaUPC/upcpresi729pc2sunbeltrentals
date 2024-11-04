@@ -1,4 +1,4 @@
-package com.generictrentals.platform;
+package com.genericstrentals.platform;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

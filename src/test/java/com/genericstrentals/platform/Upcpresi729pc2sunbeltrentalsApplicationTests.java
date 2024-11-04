@@ -1,4 +1,4 @@
-package com.generictrentals.platform;
+package com.genericstrentals.platform;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

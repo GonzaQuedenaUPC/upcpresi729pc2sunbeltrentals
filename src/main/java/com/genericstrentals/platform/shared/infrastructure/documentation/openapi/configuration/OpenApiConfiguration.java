@@ -1,4 +1,4 @@
-package com.generictrentals.platform.shared.infrastructure.documentation.openapi.configuration;
+package com.genericstrentals.platform.shared.infrastructure.documentation.openapi.configuration;
 
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;
