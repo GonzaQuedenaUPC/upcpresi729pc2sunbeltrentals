@@ -5,6 +5,7 @@ import com.genericstrentals.platform.inventories.domain.model.entities.Group;
 import com.genericstrentals.platform.inventories.domain.model.valueobjects.Groups;
 import com.genericstrentals.platform.inventories.domain.services.GroupCommandService;
 import com.genericstrentals.platform.inventories.infrastructure.persistence.jpa.repositories.GroupRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
@@ -13,6 +14,7 @@ import java.util.Arrays;
  * @summary
  * This class is responsible for handling the SeedGroupsCommand
  */
+@Service
 public class GroupCommandServiceImpl implements GroupCommandService {
 
     /**
@@ -35,7 +37,7 @@ public class GroupCommandServiceImpl implements GroupCommandService {
     @Override
     public void handle(SeedGroupsCommand command) {
         Arrays.stream(Groups.values()).forEach(group -> {
-            if (groupRepository.existsByName(group))
+            if (!groupRepository.existsByName(group))
                 groupRepository.save(new Group(Groups.valueOf(group.name())));
         });
     }

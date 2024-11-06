@@ -2,12 +2,14 @@ package com.genericstrentals.platform.inventories.infrastructure.persistence.jpa
 
 import com.genericstrentals.platform.inventories.domain.model.aggregates.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /***
  * The Category repository
  * @summary
  * This interface is a Sprint Data JPA repository that provides methods to interact with the database.
  */
+@Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 
     /**

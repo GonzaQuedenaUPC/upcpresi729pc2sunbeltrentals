@@ -1,5 +1,6 @@
 package com.genericstrentals.platform.inventories.application.internal.commandservices;
 
+import com.genericstrentals.platform.inventories.domain.exceptions.GroupNotFoundException;
 import com.genericstrentals.platform.inventories.domain.model.aggregates.Category;
 import com.genericstrentals.platform.inventories.domain.model.commands.CreateCategoryCommand;
 import com.genericstrentals.platform.inventories.domain.model.entities.Group;
@@ -27,7 +28,7 @@ public class CategoryCommandServiceImpl implements CategoryCommandService {
             throw new IllegalArgumentException("Category with name " + command.name() + " already exists");
 
         Group group = this.groupRepository.findById(command.groupId())
-                .orElseThrow(() -> new IllegalArgumentException("Group with id " + command.groupId() + " not found"));
+                .orElseThrow(() -> new GroupNotFoundException(command.groupId()));
 
         Category category = new Category(command, group);
 

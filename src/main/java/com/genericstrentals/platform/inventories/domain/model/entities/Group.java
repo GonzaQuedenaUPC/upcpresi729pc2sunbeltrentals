@@ -5,17 +5,15 @@ import lombok.Getter;
 
 import java.util.List;
 
+@Getter
 @Entity
 @Table(name = "category_groups")
 public class Group {
 
-    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-    @Getter
     @Enumerated(EnumType.STRING)
     @Column(unique = true, length = 20)
     private Groups name;
@@ -31,7 +29,7 @@ public class Group {
     }
 
     public static Group getDefaultGroup() {
-       return new Group(Groups.FARMING);
+        return new Group(Groups.FARMING);
     }
 
     public static Group toGroupFromName(String name) {
